@@ -13,6 +13,39 @@
 2. getopt() method를 loop안에서 부르기
 	- getopt()는 command line으로부터 option character를 전달해준다.
 	- 더 이상 전달해줄 option이 없으면 -1 return
+	
+### Code 
+from Class gnu.getopt.Getopt site
+~~~
+ Getopt g = new Getopt("testprog", argv, "ab:c::d");
+ //
+ int c;
+ String arg;
+ while ((c = g.getopt()) != -1)
+   {
+     switch(c)
+       {
+          case 'a':
+          case 'd':
+            System.out.print("You picked " + (char)c + "\n");
+            break;
+            //
+          case 'b':
+          case 'c':
+            arg = g.getOptarg();
+            System.out.print("You picked " + (char)c + 
+                             " with an argument of " +
+                             ((arg != null) ? arg : "null") + "\n");
+            break;
+            //
+          case '?':
+            break; // getopt() already printed an error
+            //
+          default:
+            System.out.print("getopt() returned " + c + "\n");
+       }
+   }
+~~~
 ### Option
 - 전통적인 Unix 방법으로 command line option이 전달된다. ‘-‘ character를 사용
 	- “-abc”는 “-a -b -c”와 동일하다. 
