@@ -1,5 +1,7 @@
 # StudyDaily
 
-- JAVA 
-  - gnu.getopt.Getopt
-공부 관련 작은 기록들
+공부 간단 정리 노트
+
+### JAVA 
+  - gnu.getopt.Getopt  
+
