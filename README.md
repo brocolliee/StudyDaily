@@ -5,3 +5,6 @@
 ### JAVA 
   - gnu.getopt.Getopt  
 
+### Git
+  - Git basic
+  - Git LFS
