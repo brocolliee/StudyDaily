@@ -78,7 +78,7 @@
 
 - `git status -s` or `git status --short` status를 짤막하게 보여줌
 ### 실습
-screenshot
+
 ![git status 실습](./practiceCapture/gitstatus-s.jpg)
 - ??: untracked 파일
 - M: modified file
