@@ -46,3 +46,59 @@
   - git pull = git fetch + git merge
 * **git fetch**
   - local에 연결된 remote repository를 업데이트 하는 명령어
+  
+  
+ ## 파일의 세가지 상태와 세가지 단계
+ ### 상태
+ - **Committed** : 데이터가 로컬 데이터베이스에 안전하게 저장됨
+ - **Modified** : 수정한 파일을 아직 로컬 데이터베이스에 커밋하지 않음
+ - **Staged** : 현재 수정한 파일을 곧 커밋할 예정
+ 
+ ### 단계
+ - **Working Directory** : **Working directory**에서 파일 수정
+ - **Staging Area** : **Staging area**에 파일을 stage 해서 커밋할 스냅샷을 만듦.
+ - **.git directory (repository)** : Staging Area에 있는 파일들을 커밋해서 **Git directory**에 영구적인 스냅샷으로 저장
+ 
+ ## git status : 수정하고 저장소에 저장하기
+ 워킹 디렉토리의 파일들은 Tracked/Untracked 로 나뉜다. Tracked는 관리 대상으로 이미 스냅샷에 포함한 파일을 의미하고 Unmodified, Modified, Staged중 하나의 상태로 나타난다. 그 외 나머지는 Untracked 파일이라고 지칭한다. 
+  - **Untracked** : 관리 대상이 아님.
+  - **Unmodified** : 수정되지 않은 상태
+  - **Modified** : 수정된 상태
+  - **Staged** : 커밋으로 저장소에 기록할 상태  
+  
+- `cd [깃 경로]` .git 저장소 경로로 이동
+- `git status` 파일의 상태 확인하기, 아무것도 안 하면 clean으로 뜸 , -s 옵션은 짧게 보여주기.
+- `touch [파일 명]` 파일명 파일 만들기
+- `git status` 새로 만든 파일이 untracked file로 올라가 있음. 
+- `git add [파일명]` git add 명령어로 파일 새로 추적
+- `git status` 새로 만든 파일이 tracked되어 commit 되길 기다리고 있음. 
+- `git commit -m “메시지”`
+- `git status` commit을 완료한 상태로 clean , 로컬에 저장됨. 
+- `git push origin master` git hub에 올리기 (origin repository 연결 되어있음)
+
+- `git status -s` or `git status --short` status를 짤막하게 보여줌
+### 실습
+screenshot
+![git status 실습](./practiceCapture/gitstatus-s.jpg)
+- ??: untracked 파일
+- M: modified file
+- A: add한 파일 
+- status_s_1.txt는 새로 생성 후 add 한 파일
+- status_s_2.txt는 새로 생성 후 add 하고 나서 수정한 파일
+- status_test.txt는 전에 있던 파일 수정.
+- status_s_3.txt는 새로 생성 후 add하지 않은 파일
+
+## Github fork
+fork : 다른 원격 저장소에 있는 히스토리를 그대로 나의 GitHub원격 저장소에 복사하는 것
+
+## Github : private and collaborator
+
+### Github private 
+git hub는 개인 계정에서 private을 무료로 제공하기 시작함. 단, 3명의 collaborator만 가질 수 있다. (2019.10 기준)
+
+### Github collaborator
+- repository의 setting에 들어가면 collaborator 추가 가능
+- collaborator를 추가하면 이메일이 가고 그 링크(invitation)를 타고 들어가야 invite가 accept됨.
+- collaborator가 my repositories 리스트로 보고 싶으면 fork를 해야함. 
+
+
