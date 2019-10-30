@@ -86,10 +86,102 @@
 - status_s_1.txt는 새로 생성 후 add 한 파일
 - status_s_2.txt는 새로 생성 후 add 하고 나서 수정한 파일
 - status_test.txt는 전에 있던 파일 수정.
-- status_s_3.txt는 새로 생성 후 add하지 않은 파일
+- status_s_3.txt는 새로 생성 후 add하지 않은 파일  
 
-## Github fork
-fork : 다른 원격 저장소에 있는 히스토리를 그대로 나의 GitHub원격 저장소에 복사하는 것
+## git commit
+- `git commit` staging area에 있는 파일 저장
+- `git commit -m "message"` message를 통해 commit하는 내용 저장 (주로 많이 사용)
+- `git commit -a -m “staging area 생략”` taging area에 올리는 add 작업하지 않고 실행 
+
+## git rm
+git rm 명령어로 파일을 제거
+
+### 파일 삭제하기
+**rm 명령어**
+- `rm [파일명]` 파일을 로컬에서 지우기. 하지만 staged가 되지 않기 때문에 add 해야함.
+- `git add .` 
+- `git status` 파일 지운 것이 staged되었으므로 git에서 삭제
+- `git commit -m "메세지"` 파일 삭제 반영
+
+**git rm 명령어**  
+위 rm 하고 add하는 과정을 git rm으로 해결  
+- `git rm [파일명]` 파일을 지우고 지운 파일을 staged area로 올림
+- `git commit -m "message"` 파일 삭제 반영
+파일 명을 패턴을 사용하여 파일이나 디렉토리를 한번에 삭제 가능
+
+### staging area 에서 파일 삭제하기
+local에서는 지우지 않고 staged 상태인 파일을 staging area에서 삭제하고 싶다면 --cached 옵션 사용하기
+- `git rm --cached [파일 명]`
+- `git add .`
+- `git commit -m "message"`
+
+## git diff
+- 기존 파일을 수정 한 뒤
+- `git diff` 수정했지만 아직 add를 하지 않아 staged가 아닌 파일을 보여줌.
+- 파일 수정 후 `git add . `을 한 후
+- `git diff --staged` 수정 후 staged인 상태
+- `git diff --cached` staged인 상태 파악
+
+## git log
+git log를 통해 최근 커밋부터 시간순으로 원하는 히스토리를 볼 수 있다. 여러 옵션을 가지고 원하는 히스토리를 볼 수 있다. 
+- `git log` 가장 최근의 커밋 나옴
+- `git log -p` 각 커밋의 diff 결과를 보여줌
+- `git log -2` 최근 두개의 결과 보여줌
+
+## 파일 상태를 unstage로 변경
+git add 후 git status를 하면 unstage하기 위한 명령어에 대한 설명이 나옴.
+- `git add .` 모든 파일 add
+- `git status` 현재 상태 보여줌, staged된 부분들이 있음
+- `git reset HEAD [file명]` staged된 file을 unstaged로 변경
+
+## modified로 파일 되돌리기
+수정된 파일을 다시 되돌리기 위해서 사용. 하지만 원래 파일로 덮어쓰는 것이므로 위험한 부분으로 잘 사용하지 말 것
+- 파일을 수정 후
+- `git status` modified된 파일을 나타냄
+- `git checkout [파일명]` 파일이 다시 되돌아감
+
+## Tag
+
+### git tag 종류 (2가지)
+- **Lightweight** : branch와 비슷한 개념으로 특정 commit에 대한 포인터로 commit 체크섬을 저장하는 것  
+- **Annotated** : Git DB에 태그 생성자, 이메일, 태그 생성 날짜, 태그 메시지를 저장.  
+단순한 태그를 사용한다면 Lightweight를 사용한다. lightweight 같은 경우 그냥 commit 정보를 보여준다면 annotated는 tagger, date 등 태그 정보도 보여준다.  
+
+- `git tag` 이미 만들어진 태그 조회 , -l “검색패턴” 옵션을 사용하여 태그 검색 가능
+- `git tag -a [태그이름] -m "메시지"` **annotated** 태그 만들기
+- `git tag` 생성된 태그를 볼 수 있다.
+- `git tag [태그이름]` **lightweight** 태그 만들기, 옵션을 사용하지 않는다.
+- `git show [태그이름]` 태그 이름에 대한 정보를 알려준다.  
+
+### 나중에 태그하기
+예전 커밋에 관한 태그 하기 위해사용  
+- `git tag -a [태그명] [커밋 체크섬]` 
+
+### 태그 공유하기
+git push 명령어는 자동으로 리모트 서버에 태그를 전송하지 않는다. 태그를 만들면 따로 서버에 별도로 Push해야한다.  
+- `git push origin master` 일반적으로 commit한 것을 remote저장소에 올리기
+- `git push origin [태그명]` 태그를 만들어 remote저장소에 올리기
+- `git push origin --tags` 태그 여러 개를 한번에 올린다.   
+
+#### 태그 체크아웃
+브랜치와 달리 가리키는 커밋을 바꿀 수 없기 때문에 checkout을 할 수 없다. 그래서 새로 브랜치를 생성하고 업데이트를 하는 방식으로 해야한다.
+
+
+## Github : fork
+fork는 다른 원격 저장소에 있는 히스토리를 그대로 나의 GitHub원격 저장소에 복사하는 것
+- fork할 repository를 선정해 “Fork” 버튼 누르기
+- git clone을 통해 fork한 프로젝트 local에 가져오기 (clone을 하면 remote저장소에 자동연결)
+- 작업 후 add, commit, push
+- 기존 fork를 한 프로젝트에 변경내용을 파악하고 반영하기 위해 remote저장소에 추가하기 
+  - 주로 upstream으로 추가 
+  - `git remote -v` 원격저장소 현황 확인
+- pull을 통해 원래 저장소의 변경된 사항 반영
+  - Fork한 저장소의 변경사항을 나의 local에 반영하기 위함 (pull = fetch + merge)
+  - 혹은 fetch와 merge를 통해서 작업 
+- push를 통해 자신의 local에서 작업한 내용을 내가 fork한 나의 repository에 올리기
+- pull request를 통해 원래의 repository(fork해온 repository)에 합친다.
+  - GitHub에 저장소를 보면 push를 하고 나서 “Compare & pull request” 버튼이 활성화가 된다. 이 버튼을 통해서 message 작성 후 PR(Pull Request)를 보낸다. 
+- PR을 받은 원본 저장소 관리자는 코드 변경 내용을 확인 하고 Merge 결정
 
 ## Github : private and collaborator
 
