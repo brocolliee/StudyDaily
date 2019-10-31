@@ -6,5 +6,7 @@
   - gnu.getopt.Getopt  
 
 ### Git
-  - Git basic
+  - Git Basic
   - Git LFS
+  - Git Rebase
+  - Git Server
