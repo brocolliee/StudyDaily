@@ -10,3 +10,7 @@
   - Git LFS
   - Git Rebase
   - Git Server
+
+### Data Structure
+
+- Array vs LinkedList
