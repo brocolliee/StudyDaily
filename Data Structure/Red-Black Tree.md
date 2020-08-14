@@ -71,21 +71,21 @@
 - **삭제 예시**
   - **처음**
     
-    - ![img](..\_Images\[RBT]example_1.png)
+    - ![img](../_Images/[RBT]example_1.png)
   - **노드 0002 삭제**
     - 0001이 0002 자리로 올라온다.
       
-      - ![img](..\_Images\[RBT]example_2.png)
+      - ![img](../_Images/[RBT]example_2.png)
       
     - Black -Height로 인해 노드 색 조정
       
-      - ![img](..\_Images\[RBT]example_3.png)
+      - ![img](../_Images/[RBT]example_3.png)
   - **노드 005 삭제**
     - 0005 삭제 후 0005 자식이 없기 때문에 Leaf 노드가 올라온다.
-      - ![img](..\_Images\[RBT]example_4.png)
+      - ![img](../_Images/[RBT]example_4.png)
     - Black-Height로 인해 Rotation후 노드 색 조정
-      - ![img](..\_Images\[RBT]example_5.png)
-    - ![img](..\_Images\[RBT]example_6.png)
+      - ![img](../_Images/[RBT]example_5.png)
+    - ![img](../_Images/[RBT]example_6.png)
 
 ### 사용
 
