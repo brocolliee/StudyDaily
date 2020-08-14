@@ -1,16 +1,26 @@
-# StudyDaily
+# Study Notes
 
-공부 간단 정리 노트
-
-### JAVA 
+### [JAVA](./JAVA) 
   - gnu.getopt.Getopt  
 
-### Git
+### [Git](./Git)
   - Git Basic
   - Git LFS
   - Git Rebase
   - Git Server
 
-### Data Structure
+### Algorithms
+
+-  [Hackerrank](https://github.com/brocolliee/Hackerrank)
+
+### [Data Structure](./Data Structure)
 
 - Array vs LinkedList
+- Red-Black Tree
+
+
+
+### Unity
+
+- [기본 정리](https://github.com/brocolliee/Unity)
+
