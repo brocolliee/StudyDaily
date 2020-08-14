@@ -69,25 +69,23 @@
   2. 삭제 노드가 Black일 경우 : Black-Height가 1 감소하기때문에 black 노드가 1개 추가 될 수 있도록 rotation을 한 후 노드의 색깔을 조정한다. 
 
 - **삭제 예시**
-  
   - **처음**
     
-    - <img src="..\_Images\[RBT]example_1.png" alt="example_1" style="zoom:67%;"/>
+    - ![img](..\_Images\[RBT]example_1.png)
   - **노드 0002 삭제**
     - 0001이 0002 자리로 올라온다.
       
-      - <img src="..\_Images\[RBT]example_2.png" alt="example_2" style="zoom:67%;"/>
+      - ![img](..\_Images\[RBT]example_2.png)
       
-        
     - Black -Height로 인해 노드 색 조정
       
-      - <img src="..\_Images\[RBT]example_3.png" alt="example_3" style="zoom:67%;"/>
+      - ![img](..\_Images\[RBT]example_3.png)
   - **노드 005 삭제**
     - 0005 삭제 후 0005 자식이 없기 때문에 Leaf 노드가 올라온다.
-      - <img src="..\_Images\[RBT]example_4.png" alt="example_4" style="zoom:67%;"/>
+      - ![img](..\_Images\[RBT]example_4.png)
     - Black-Height로 인해 Rotation후 노드 색 조정
-      - <img src="..\_Images\[RBT]example_5.png" alt="example_5" style="zoom:67%;"/>
-    - <img src="..\_Images\[RBT]example_6.png" alt="example_6" style="zoom:67%;"/>
+      - ![img](..\_Images\[RBT]example_5.png)
+    - ![img](..\_Images\[RBT]example_6.png)
 
 ### 사용
 
