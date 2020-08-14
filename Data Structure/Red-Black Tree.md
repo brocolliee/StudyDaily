@@ -39,26 +39,24 @@
 ### 삽입
 
 - 노드를 insertion 하는 시간 : **O(logn)**으로 현재 노드가 들어갈 위치를 찾는다.
-
 - Black-Height의 변경을 최소화 하기 위해 삽입된 노드는 Red로 지정한다. (속성 #5)
 
   - Red를 넣게되면 Double Red가 될 수 있다. (속성 #4)
-
--  레드-블랙 트리의 속성을 유지하기 위해 Rotation을 수행하고 노드의 색을 조절한다. 
-
-  -  **Restructing** : 삽입한 노드와 부모, 부모의 부모를 가지고 Restructing을한다.
-- 삽입한 노드 부모의 형제가 Black일 때 사용한다.
-    - 다른 서브트리에 영향을 끼치지 않으므로 한번의 Restructuring이면 끝난다.
-- Time complexity : 자체 시간 복잡도는 O(1) 이지만 insertion으로 인해 **O(logn)**
-    - <img src="https://t1.daumcdn.net/cfile/tistory/998F903359CF658617" alt="img" style="zoom: 33%;" /> 
-
-  - **Recoloring** : 삽입한 노드의 부모와 부모의 형제를 Black으로 하고 내 부모의 부모를 Red로 한다. 
-- 삽입한 노드의 부모의 형제가 Red일 때 사용한다. 
+- 레드-블랙 트리의 속성을 유지하기 위해 Rotation을 수행하고 노드의 색을 조절한다. 
+- **Restructing** : 삽입한 노드와 부모, 부모의 부모를 가지고 Restructing을한다.
+  - 삽입한 노드 부모의 형제가 Black일 때 사용한다.
+  - 다른 서브트리에 영향을 끼치지 않으므로 한번의 Restructuring이면 끝난다.
+  - Time complexity : 자체 시간 복잡도는 O(1) 이지만 insertion으로 인해 **O(logn)**
+  - <img src="https://t1.daumcdn.net/cfile/tistory/998F903359CF658617" alt="img" style="zoom: 33%;" /> 
+- **Recoloring** : 삽입한 노드의 부모와 부모의 형제를 Black으로 하고 내 부모의 부모를 Red로 한다. 
+    - 삽입한 노드의 부모의 형제가 Red일 때 사용한다. 
     - Restructing과 다르게 여러 번 작업이 될 수 있다.
-- Time complexity : 자체 시간 복잡도는 O(1)이지만 또한 Recoloring은 최악의 경우 Root까지 거슬러 올라갈 수 있으므로 **O(logn)**이 걸리게 된다. 
+    - Time complexity : 자체 시간 복잡도는 O(1)이지만 또한 Recoloring은 최악의 경우 Root까지 거슬러 올라갈 수 있으므로 **O(logn)**이 걸리게 된다. 
     - <img src="https://t1.daumcdn.net/cfile/tistory/9956CA3359CF658708" alt="img" style="zoom: 33%;" /> 
 
-  - 이미지 및 설명 출처 : https://zeddios.tistory.com/237  <=  자세한 설명 참고 사이트
+    - 이미지 및 설명 출처 : https://zeddios.tistory.com/237  <=  자세한 설명 참고 사이트
+
+
 
 ### 삭제
 
@@ -71,21 +69,21 @@
 - **삭제 예시**
   - **처음**
     
-    - ![img](./images/[RBT]example_1.PNG)
+    - <img src="./images/[RBT]example_1.PNG" alt="img" style="zoom:67%;" />
   - **노드 0002 삭제**
     - 0001이 0002 자리로 올라온다.
       
-      - ![img](../_Images/[RBT]example_2.png)
+      - <img src="./images/[RBT]example_2.PNG" alt="img" style="zoom:67%;" />
       
     - Black -Height로 인해 노드 색 조정
       
-      - ![img](../_Images/[RBT]example_3.png)
+      - <img src="./images/[RBT]example_3.PNG" alt="img" style="zoom:67%;" />
   - **노드 005 삭제**
     - 0005 삭제 후 0005 자식이 없기 때문에 Leaf 노드가 올라온다.
-      - ![img](../_Images/[RBT]example_4.png)
+      - <img src="./images/[RBT]example_4.PNG" alt="img" style="zoom:67%;" />
     - Black-Height로 인해 Rotation후 노드 색 조정
-      - ![img](../_Images/[RBT]example_5.png)
-    - ![img](../_Images/[RBT]example_6.png)
+      - <img src="./images/[RBT]example_5.PNG" alt="img" style="zoom:67%;" />
+    - <img src="./images/[RBT]example_6.PNG" alt="img" style="zoom: 67%;" />
 
 ### 사용
 
