@@ -13,7 +13,7 @@
 
 -  [Hackerrank](https://github.com/brocolliee/Hackerrank)
 
-### [Data Structure](./Data Structure)
+### [Data Structure](./Data%20Structure)
 
 - Array vs LinkedList
 - Red-Black Tree
