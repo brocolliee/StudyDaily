@@ -71,7 +71,7 @@
 - **삭제 예시**
   - **처음**
     
-    - ![img](../_Images/[RBT]example_1.png)
+    - ![img](./images/[RBT]example_1.PNG)
   - **노드 0002 삭제**
     - 0001이 0002 자리로 올라온다.
       
