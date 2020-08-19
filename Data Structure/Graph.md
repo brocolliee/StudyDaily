@@ -11,15 +11,15 @@
 
 - 모든 노드를 포함해야 하며 모든 노드가 서로 연결 되어야한다. 
 - Tree의 속성을 만족하는 그래프
-  - 사이클을 포함해서는 안된다. ( [Tree 의 속성](https://ratsgo.github.io/data structure&algorithm/2017/10/21/tree/) )
+  - 사이클을 포함해서는 안된다. ( [Tree 의 속성](https://ratsgo.github.io/data%20structure&algorithm/2017/10/21/tree/) )
 - n개의 노드일 때, n-1개의 엣지를 가진다.
 - 사용 사례 : 통신 네트워크 구축    
 
 ### Minimum Spanning Tree (최소 신장 트리)
 
 - Spanning Tree 중 엣지의 가중치의 합이 최소인 신장 트리
-  - <img src="./images/[MST]example_1.PNG" alt="img" style="zoom:50%;" />
-    - 그림의 (b)와 (c)모두 (a) 그래프의 minimum spanning tree
+  - <img src="./images/[MST]example_1.PNG" alt="img" style="zoom:50%;"/>
+  - 그림의 (b)와 (c)모두 (a) 그래프의 minimum spanning tree
 - MST는 여러개가 될 수 있다.
 - MST를 찾는 알고리즘 : Kruskal 알고리즘 , Prim 알고리즘
 
