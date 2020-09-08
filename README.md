@@ -1,7 +1,11 @@
 # Study Notes
 
 ### [JAVA](./JAVA) 
-  - gnu.getopt.Getopt  
+  - gnu.getopt.Getopt 
+
+### [Python](./Python)
+
+- Pandas
 
 ### [Git](./Git)
   - Git Basic
