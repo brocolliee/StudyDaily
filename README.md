@@ -6,6 +6,7 @@
 ### [Python](./Python)
 
 - Pandas
+- matplotlib
 
 ### [Git](./Git)
   - Git Basic
