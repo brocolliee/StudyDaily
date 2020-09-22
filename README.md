@@ -7,6 +7,7 @@
 
 - Pandas
 - matplotlib
+- DataScrap
 
 ### [Git](./Git)
   - Git Basic
