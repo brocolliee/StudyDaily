@@ -109,13 +109,13 @@ driver.get(url)
 time.sleep(3) # 3초 기다려주기
 
 # 프로그램을 통해 어떤 작업을 하기 위해 xpath를 사용하기
-driver.find_element_by('xpath') # xpath 복사 후 넣어주기
+driver.find_element_by_xpath('xpath') # xpath 복사 후 넣어주기
 
 # 예 : 날짜 입력하기 (input 값 넣기 => 조회 버튼)
-date = driver.find_element_by('input xpath') # input xpath 넣어주기
+date = driver.find_element_by_xpath('input xpath') # input xpath 넣어주기
 date.clear()
 date.send_keys(2020.07.20) # 자동으로 날짜를 넣어줌
-bt = driver.find_element_by('button xpath') 
+bt = driver.find_element_by_xpath('button xpath') 
 bt.click() # 버튼 클릭하기
 
 ```
