@@ -1,4 +1,4 @@
-## Data Scraping 1
+## Data Scraping
 
 - '빅데이터 서비스' 강의 들은 후 정리
 
@@ -90,3 +90,32 @@ for i in all_link:
 g.close()
 ```
 
+
+
+### selenium 라이브러리
+
+- xpath : 태그들의 포함관계, 순서를 이용하여 한 페이지 내에 속한 원소들 각각의 주소
+  - 개발자 도구 이용하여 해당 태그의 xpath 구할 수 있음
+
+``` python
+from selenium import webdriver
+import time # page loading 되도록 기다려주기 위함 
+
+path = './chromedriver.exe' # 다운로드 받아서 폴더에 넣기
+driver = webdriver.Chrome(path)
+
+url = 'site url' # 가지고 오고자 하는 url 넣기
+driver.get(url)
+time.sleep(3) # 3초 기다려주기
+
+# 프로그램을 통해 어떤 작업을 하기 위해 xpath를 사용하기
+driver.find_element_by('xpath') # xpath 복사 후 넣어주기
+
+# 예 : 날짜 입력하기 (input 값 넣기 => 조회 버튼)
+date = driver.find_element_by('input xpath') # input xpath 넣어주기
+date.clear()
+date.send_keys(2020.07.20) # 자동으로 날짜를 넣어줌
+bt = driver.find_element_by('button xpath') 
+bt.click() # 버튼 클릭하기
+
+```
