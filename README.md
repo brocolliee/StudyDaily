@@ -7,7 +7,8 @@
 
 - Pandas
 - matplotlib
-- DataScrap
+- DataScraping
+- Machine Learning Data 분석
 
 ### [Git](./Git)
   - Git Basic
